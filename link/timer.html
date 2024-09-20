@@ -35,6 +35,8 @@
 
         i {
             font-size: 1.1em;
+            position: relative;
+            top: 3px;
         }
 
         .stopwatch {
@@ -96,31 +98,31 @@
             cursor: pointer;
             outline: none;
         }
-        
+
         .controls button:focus {
             outline: none;
         }
-        
+
         .controls button:hover {
             background-color: #00ff00;
             color: #000000;
         }
-        
+
         #reset {
             transform: scale(0.95);
             border: 1px solid #00ff00;
         }
-        
+
         .controls #start {
             background-color: #00ff00;
             color: #000000;
         }
-        
+
         .controls #start.pause {
             background-color: #ff0000;
             color: #000000;
         }
-        
+
         .controls #start.continue {
             background-color: blue;
             color: #000000;
@@ -143,6 +145,10 @@
             <button id="reset">Reset</button>
         </div>
     </div>
+
+
+    <!-- offline -->
+    <script src="service-worker-register.js"></script>
 
     <script>
         let startTime, updatedTime, difference, tInterval, delayTimeout;

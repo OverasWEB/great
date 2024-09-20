@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coming Soon</title>
+    <title>Coming Soon!</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
@@ -16,25 +16,9 @@
             color: #00ff00;
             font-family: 'Courier New', Courier, monospace;
             margin: 0;
-        }
-
-        .back {
-            width: 100%;
-            background-color: #003300;
-            text-decoration: none;
-            text-align: left;
-            padding: 15px 0 15px 15px;
-            position: fixed;
-            top: 0;
-            left: 0;
-            color: #00ff00;
-            font-size: 1.1em;
-            font-weight: bold;
-            box-shadow: 0 -10px 8px 10px rgba(0, 255, 0, 0.5);
-        }
-
-        i {
-            font-size: 1.1em;
+            cursor: pointer;
+            transition: all 0.5s ease-in;
+            overflow: hidden;
         }
 
         .container {
@@ -44,27 +28,36 @@
         h1 {
             font-size: 2em;
             margin: 0;
-            color: #ff0000; /* Mengubah warna teks h1 */
-            text-shadow: 0 0 10px #ff0000; /* Mengubah warna bayangan teks h1 */
+            color: #ff0000;
+            text-shadow: 0 0 10px #ff0000;
         }
 
         p {
             font-size: 1em;
-            color: #00ccff; /* Mengubah warna teks p */
+            color: #00ccff;
             margin: 10px 20px;
-            text-shadow: 0 0 5px #00ccff; /* Mengubah warna bayangan teks p */
+            text-shadow: 0 0 5px #00ccff;
         }
     </style>
 </head>
 
-<body>
-    
-    <a href="../index.html" class="back"><i class="fa-solid fa-arrow-left"></i> Coming_Soon</a>
-
+<body onclick="window.location.href='index.html';">
     <div class="container">
         <h1>Coming Soon!</h1>
         <p>Kami sedang mengkode sesuatu yang keren. Tetap terhubung dan nantikan update selanjutnya!</p>
     </div>
+
+    <!-- offline -->
+    <script src="service-worker-register.js"></script>
+    <script>
+        // Mengatur timeout untuk mengecilkan halaman dan mengarahkan setelah 3 detik
+        setTimeout(function () {
+            document.body.style.transform = 'scale(0.5)'; // Efek mengecil
+            setTimeout(function () {
+                window.location.href = '../index.html'; // Arahkan setelah transisi
+            }, 500); // Tunggu transisi selesai
+        }, 2000); // Tunggu 2.5 detik
+    </script>
 </body>
 
 </html>
